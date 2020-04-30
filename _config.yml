@@ -60,7 +60,7 @@ plugins:
 
 author:
   name   : "Aneesh M U"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/bio_photo_aneesh.jpg"
   bio    : "Embedded Vision Engineer with an interest in Heterogenous Platforms (FPGA, GPU)"
   links:
     # - label: "Website"
@@ -68,25 +68,25 @@ author:
     #   url: "https://"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/AneeshMU"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/aneesh64"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://www.instagram.com/aneesh.mu/"
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/AneeshMU"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/aneesh64"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://www.instagram.com/aneesh.mu/"
 
 defaults:
   # _posts
