@@ -63,7 +63,7 @@ plugins:
 author:
   name   : "Aneesh M U"
   avatar : "/assets/images/bio_photo_aneesh.jpg"
-  bio    : "Embedded Vision Engineer with an interest in Heterogenous Platforms (FPGA, GPU)"
+  bio    : "Embedded Vision Engineer with an interest in Heterogenous Platforms (FPGA, MPSoC, GPU)"
   links:
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"

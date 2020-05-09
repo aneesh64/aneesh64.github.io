@@ -6,6 +6,7 @@ categories:
 tags:
   - personal
   - update
+classes: wide
 ---
 
 This is an under construction persoanl page/blog. I'll post contents soon and modify these pages to make it aesthetic. Hope to see you all soon.
