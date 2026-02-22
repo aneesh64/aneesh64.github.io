@@ -1,6 +1,6 @@
 ---
 title: "Vibe Coding Hardware: Rebuilding Anthropic's VLIW SIMD Take-Home as an FPGA-Oriented SoC"
-date: 2026-02-22T09:00:00-05:00
+date: 2026-02-21T12:00:00-05:00
 categories:
   - Blog
 tags:
