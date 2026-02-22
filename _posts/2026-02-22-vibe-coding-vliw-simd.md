@@ -13,8 +13,6 @@ classes: wide
 permalink: /blog/vibe-coding-vliw-simd/
 ---
 
-# Vibe Coding Hardware: Rebuilding Anthropic's VLIW SIMD Take-Home as an FPGA-Oriented SoC
-
 I came across Anthropic's original performance take-home through posts on X. The challenge is straightforward to describe but surprisingly deep to solve: optimize machine cycles for a tree-traversal kernel on a VLIW SIMD simulator.
 
 In practice, that means understanding the architecture well enough to schedule instructions so hardware resources stay busy while hazards stay under control.
