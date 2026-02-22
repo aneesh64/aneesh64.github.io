@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-label="VLIW SIMD reduced architecture diagram">
+  <rect x="0" y="0" width="900" height="520" fill="#ffffff"/>
+
+  <defs>
+    <style>
+      .box { fill: #f7f7f7; stroke: #333333; stroke-width: 1.2; }
+      .title { font: 14px sans-serif; fill: #111111; font-weight: 600; }
+      .label { font: 12px sans-serif; fill: #111111; }
+      .arrow { stroke: #333333; stroke-width: 1.2; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <!-- Fetch/Decode -->
+  <rect class="box" x="360" y="20" width="180" height="50"/>
+  <text class="title" x="450" y="50" text-anchor="middle">Fetch + Decode</text>
+
+  <!-- Bundle Issue -->
+  <rect class="box" x="120" y="90" width="660" height="160"/>
+  <text class="title" x="450" y="115" text-anchor="middle">Bundle Issue per Cycle</text>
+
+  <!-- Engines -->
+  <rect class="box" x="150" y="130" width="120" height="40"/>
+  <text class="label" x="210" y="155" text-anchor="middle">Scalar ALU 0</text>
+
+  <rect class="box" x="290" y="130" width="120" height="40"/>
+  <text class="label" x="350" y="155" text-anchor="middle">Scalar ALU 1</text>
+
+  <rect class="box" x="430" y="130" width="120" height="40"/>
+  <text class="label" x="490" y="155" text-anchor="middle">Vector ALU 0</text>
+
+  <rect class="box" x="570" y="130" width="120" height="40"/>
+  <text class="label" x="630" y="155" text-anchor="middle">Vector ALU 1</text>
+
+  <rect class="box" x="210" y="185" width="120" height="40"/>
+  <text class="label" x="270" y="210" text-anchor="middle">Load Engine x1</text>
+
+  <rect class="box" x="360" y="185" width="120" height="40"/>
+  <text class="label" x="420" y="210" text-anchor="middle">Store Engine x1</text>
+
+  <rect class="box" x="510" y="185" width="120" height="40"/>
+  <text class="label" x="570" y="210" text-anchor="middle">Flow Engine x1</text>
+
+  <!-- Register files and memory -->
+  <rect class="box" x="140" y="290" width="160" height="45"/>
+  <text class="label" x="220" y="318" text-anchor="middle">Scalar Register File</text>
+
+  <rect class="box" x="330" y="290" width="160" height="45"/>
+  <text class="label" x="410" y="318" text-anchor="middle">Vector Register File</text>
+
+  <rect class="box" x="560" y="290" width="200" height="45"/>
+  <text class="label" x="660" y="318" text-anchor="middle">Data Memory / Scratchpad</text>
+
+  <!-- PC -->
+  <rect class="box" x="380" y="370" width="140" height="40"/>
+  <text class="label" x="450" y="395" text-anchor="middle">Program Counter</text>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="450" y1="70" x2="450" y2="90"/>
+
+  <line class="arrow" x1="220" y1="170" x2="220" y2="290"/>
+  <line class="arrow" x1="350" y1="170" x2="220" y2="290"/>
+
+  <line class="arrow" x1="490" y1="170" x2="410" y2="290"/>
+  <line class="arrow" x1="630" y1="170" x2="410" y2="290"/>
+
+  <line class="arrow" x1="270" y1="225" x2="220" y2="290"/>
+  <line class="arrow" x1="270" y1="225" x2="660" y2="290"/>
+
+  <line class="arrow" x1="420" y1="225" x2="660" y2="290"/>
+
+  <line class="arrow" x1="570" y1="225" x2="450" y2="370"/>
+  <line class="arrow" x1="450" y1="410" x2="450" y2="70"/>
+</svg>

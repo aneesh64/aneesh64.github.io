@@ -20,10 +20,10 @@ I came across Anthropic's original performance take-home through posts on X. The
 In practice, that means understanding the architecture well enough to schedule instructions so hardware resources stay busy while hazards stay under control.
 
 - Original take-home discussion on X:
-  - https://x.com/AnthropicAI/status/2014143403144200234
-  - https://x.com/trirpi/status/2014206185994629264
-- Original repository/problem reference: https://github.com/anthropics/original_performance_takehome.git
-- Project repo (this work): https://github.com/aneesh64/experimental-vliw-simd/tree/main
+  - [https://x.com/AnthropicAI/status/2014143403144200234](https://x.com/AnthropicAI/status/2014143403144200234)
+  - [https://x.com/trirpi/status/2014206185994629264](https://x.com/trirpi/status/2014206185994629264)
+- Original repository/problem reference: [https://github.com/anthropics/original_performance_takehome.git](https://github.com/anthropics/original_performance_takehome.git)
+- Project repo (this work): [https://github.com/aneesh64/experimental-vliw-simd/tree/main](https://github.com/aneesh64/experimental-vliw-simd/tree/main)
 
 ## Why this problem is interesting
 
@@ -51,41 +51,7 @@ That gives enough parallelism to demonstrate real scheduling pressure while stay
 
 ## Architecture diagram (current reduced design)
 
-```mermaid
-flowchart LR
-  ICache[Instruction Memory / Program ROM] --> Fetch[Fetch + Decode]
-
-  subgraph B[Bundle Issue per Cycle]
-    direction LR
-    SA1[Scalar ALU 0]
-    SA2[Scalar ALU 1]
-    VA1[Vector ALU 0]
-    VA2[Vector ALU 1]
-    LD[Load Engine x1]
-    ST[Store Engine x1]
-    FL[Flow Engine x1]
-  end
-
-  Fetch --> B
-
-  SRF[Scalar Register File] <--> SA1
-  SRF <--> SA2
-  VRF[Vector Register File] <--> VA1
-  VRF <--> VA2
-
-  LD --> SRF
-  LD --> VRF
-  ST --> DMem[Data Memory / Scratchpad]
-  DMem --> LD
-  SRF --> ST
-  VRF --> ST
-
-  FL --> PC[Program Counter / Branch Control]
-  PC --> Fetch
-
-  VA1 -. aligned vector access .-> DMem
-  VA2 -. aligned vector access .-> DMem
-```
+![VLIW SIMD reduced architecture](/assets/images/diagrams/vliw-simd-arch.svg)
 
 ## First experiment: optimize the kernel with GitHub Copilot
 
@@ -115,17 +81,17 @@ Instead of writing RTL directly in Verilog/SystemVerilog, I chose SpinalHDL (Sca
 
 Useful references:
 
-- SpinalHDL official docs: https://spinalhdl.github.io/SpinalDoc-RTD/
-- SpinalHDL project: https://github.com/SpinalHDL/SpinalHDL
-- VexRiscv (well-known SpinalHDL CPU example): https://github.com/SpinalHDL/VexRiscv
+- SpinalHDL official docs: [https://spinalhdl.github.io/SpinalDoc-RTD/](https://spinalhdl.github.io/SpinalDoc-RTD/)
+- SpinalHDL project: [https://github.com/SpinalHDL/SpinalHDL](https://github.com/SpinalHDL/SpinalHDL)
+- VexRiscv (well-known SpinalHDL CPU example): [https://github.com/SpinalHDL/VexRiscv](https://github.com/SpinalHDL/VexRiscv)
 
 For verification I used cocotb in Python with Icarus Verilog as the simulator.
 
 References:
 
-- cocotb docs: https://docs.cocotb.org/
-- cocotb repo: https://github.com/cocotb/cocotb
-- Icarus Verilog: http://iverilog.icarus.com/
+- cocotb docs: [https://docs.cocotb.org/](https://docs.cocotb.org/)
+- cocotb repo: [https://github.com/cocotb/cocotb](https://github.com/cocotb/cocotb)
+- Icarus Verilog: [http://iverilog.icarus.com/](http://iverilog.icarus.com/)
 
 This gave me a productive loop: generate RTL from SpinalHDL, simulate quickly, and validate behavior in Python testbenches.
 
