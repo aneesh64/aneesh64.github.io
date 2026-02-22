@@ -3,11 +3,11 @@
 
   <defs>
     <style>
-      .box { fill: #1f2937; stroke: #9ca3af; stroke-width: 1.2; }
-      .group { fill: #0f172a; stroke: #6b7280; stroke-width: 1.2; }
-      .title { font: 14px sans-serif; fill: #f9fafb; font-weight: 600; }
-      .label { font: 12px sans-serif; fill: #e5e7eb; }
-      .arrow { stroke: #e5e7eb; stroke-width: 1.2; marker-end: url(#arrow); }
+      .box { fill: #0f172a; stroke: #e5e7eb; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 3 2; }
+      .group { fill: #0b1220; stroke: #9ca3af; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 4 2; }
+      .title { font: 14px "Segoe Print", "Segoe UI", sans-serif; fill: #f9fafb; font-weight: 600; }
+      .label { font: 12px "Segoe Print", "Segoe UI", sans-serif; fill: #e5e7eb; }
+      .arrow { stroke: #e5e7eb; stroke-width: 1.2; fill: none; marker-end: url(#arrow); }
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L8,3 L0,6 Z" fill="#e5e7eb"/>
@@ -15,57 +15,62 @@
   </defs>
 
   <!-- Fetch/Decode -->
-  <rect class="box" x="350" y="25" width="200" height="50"/>
-  <text class="title" x="450" y="55" text-anchor="middle">Fetch + Decode</text>
+  <rect class="box" x="330" y="20" width="240" height="48" rx="8"/>
+  <text class="title" x="450" y="50" text-anchor="middle">Fetch + Decode</text>
 
   <!-- Bundle Issue Group -->
-  <rect class="group" x="110" y="95" width="680" height="140" rx="6"/>
-  <text class="title" x="450" y="120" text-anchor="middle">Bundle Issue per Cycle</text>
+  <rect class="group" x="80" y="90" width="740" height="170" rx="10"/>
+  <text class="title" x="450" y="118" text-anchor="middle">Bundle Issue per Cycle</text>
 
-  <rect class="box" x="140" y="140" width="120" height="38"/>
-  <text class="label" x="200" y="164" text-anchor="middle">Scalar ALU 0</text>
+  <!-- Row 1: ALUs -->
+  <rect class="box" x="110" y="130" width="150" height="38" rx="6"/>
+  <text class="label" x="185" y="154" text-anchor="middle">Scalar ALU 0</text>
 
-  <rect class="box" x="270" y="140" width="120" height="38"/>
-  <text class="label" x="330" y="164" text-anchor="middle">Scalar ALU 1</text>
+  <rect class="box" x="280" y="130" width="150" height="38" rx="6"/>
+  <text class="label" x="355" y="154" text-anchor="middle">Scalar ALU 1</text>
 
-  <rect class="box" x="400" y="140" width="120" height="38"/>
-  <text class="label" x="460" y="164" text-anchor="middle">Vector ALU 0</text>
+  <rect class="box" x="450" y="130" width="150" height="38" rx="6"/>
+  <text class="label" x="525" y="154" text-anchor="middle">Vector ALU 0</text>
 
-  <rect class="box" x="530" y="140" width="120" height="38"/>
-  <text class="label" x="590" y="164" text-anchor="middle">Vector ALU 1</text>
+  <rect class="box" x="620" y="130" width="150" height="38" rx="6"/>
+  <text class="label" x="695" y="154" text-anchor="middle">Vector ALU 1</text>
 
-  <rect class="box" x="210" y="185" width="120" height="36"/>
+  <!-- Row 2: Load/Store/Flow -->
+  <rect class="box" x="200" y="185" width="140" height="36" rx="6"/>
   <text class="label" x="270" y="208" text-anchor="middle">Load x1</text>
 
-  <rect class="box" x="360" y="185" width="120" height="36"/>
-  <text class="label" x="420" y="208" text-anchor="middle">Store x1</text>
+  <rect class="box" x="380" y="185" width="140" height="36" rx="6"/>
+  <text class="label" x="450" y="208" text-anchor="middle">Store x1</text>
 
-  <rect class="box" x="510" y="185" width="120" height="36"/>
-  <text class="label" x="570" y="208" text-anchor="middle">Flow x1</text>
+  <rect class="box" x="560" y="185" width="140" height="36" rx="6"/>
+  <text class="label" x="630" y="208" text-anchor="middle">Flow x1</text>
 
   <!-- Register files and memory -->
-  <rect class="box" x="120" y="270" width="200" height="48"/>
-  <text class="label" x="220" y="300" text-anchor="middle">Scalar Register File</text>
+  <rect class="box" x="90" y="280" width="220" height="48" rx="8"/>
+  <text class="label" x="200" y="310" text-anchor="middle">Scalar Register File</text>
 
-  <rect class="box" x="350" y="270" width="200" height="48"/>
-  <text class="label" x="450" y="300" text-anchor="middle">Vector Register File</text>
+  <rect class="box" x="340" y="280" width="220" height="48" rx="8"/>
+  <text class="label" x="450" y="310" text-anchor="middle">Vector Register File</text>
 
-  <rect class="box" x="600" y="270" width="220" height="48"/>
-  <text class="label" x="710" y="300" text-anchor="middle">Data Memory / Scratchpad</text>
+  <rect class="box" x="600" y="280" width="220" height="48" rx="8"/>
+  <text class="label" x="710" y="310" text-anchor="middle">Data Memory / Scratchpad</text>
 
   <!-- Program Counter -->
-  <rect class="box" x="360" y="360" width="180" height="44"/>
-  <text class="label" x="450" y="388" text-anchor="middle">Program Counter</text>
+  <rect class="box" x="360" y="380" width="180" height="44" rx="8"/>
+  <text class="label" x="450" y="408" text-anchor="middle">Program Counter</text>
 
-  <!-- Arrows (clean, non-overlapping) -->
-  <line class="arrow" x1="450" y1="75" x2="450" y2="95"/>
+  <!-- Arrows (clean routing) -->
+  <path class="arrow" d="M450 68 L450 90"/>
 
-  <line class="arrow" x1="200" y1="178" x2="200" y2="270"/>
-  <line class="arrow" x1="460" y1="178" x2="450" y2="270"/>
+  <path class="arrow" d="M185 168 L185 280"/>
+  <path class="arrow" d="M355 168 L200 280"/>
 
-  <line class="arrow" x1="270" y1="221" x2="710" y2="270"/>
-  <line class="arrow" x1="420" y1="221" x2="710" y2="270"/>
+  <path class="arrow" d="M525 168 L450 280"/>
+  <path class="arrow" d="M695 168 L450 280"/>
 
-  <line class="arrow" x1="570" y1="221" x2="450" y2="360"/>
-  <line class="arrow" x1="450" y1="404" x2="450" y2="75"/>
+  <path class="arrow" d="M270 221 L710 280"/>
+  <path class="arrow" d="M450 221 L710 280"/>
+
+  <path class="arrow" d="M630 221 L450 380"/>
+  <path class="arrow" d="M450 424 L450 68"/>
 </svg>
