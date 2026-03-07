@@ -13,6 +13,8 @@ classes: wide
 permalink: /blog/vibe-coding-vliw-simd/
 ---
 
+> Update: I published a follow-up on the next layer of this project — the new `TileWeave` DSL, built with GPT-5.4. Read it here: [TileWeave: A Triton-Inspired DSL for a Verified VLIW SIMD Backend, Built with GPT-5.4](/blog/tileweave-dsl-gpt-5-4/).
+
 I came across Anthropic's original performance take-home through posts on X. The challenge is straightforward to describe but surprisingly deep to solve: optimize machine cycles for a tree-traversal kernel on a VLIW SIMD simulator.
 
 In practice, that means understanding the architecture well enough to schedule instructions so hardware resources stay busy while hazards stay under control.
@@ -160,3 +162,5 @@ If this interests you, fork the project and push it further. Treat the generated
 ---
 
 If you share your own experiments, I'd love to compare results - especially around scheduling quality, verification stability, and how prompt strategy changes architecture outcomes.
+
+If you want to see where the project went next, the follow-up post is here: [TileWeave: A Triton-Inspired DSL for a Verified VLIW SIMD Backend, Built with GPT-5.4](/blog/tileweave-dsl-gpt-5-4/).
