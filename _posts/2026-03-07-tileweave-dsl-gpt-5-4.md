@@ -1,6 +1,6 @@
 ---
 title: "TileWeave: A Triton-Inspired DSL for a Verified VLIW SIMD Backend, Built with GPT-5.4"
-date: 2026-03-07T18:00:00-05:00
+date: 2026-03-07T00:05:00-05:00
 categories:
   - Blog
 tags:
