@@ -1,7 +1,35 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
-author_profile: true
+layout: simple
+title: Home
 ---
+
+<div class="intro">
+  This is a personal engineering notebook focused on hardware systems, FPGA-oriented compute, compilers, and embedded vision. The design is intentionally minimal: readable text, direct navigation, and no decorative noise competing with the writing.
+</div>
+
+{% assign home_posts = paginator.posts | default: site.posts %}
+{% for post in home_posts %}
+<article class="post-listing">
+  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+  <div>{{ post.excerpt }}</div>
+</article>
+{% endfor %}
+
+{% if paginator and paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="Pagination">
+  {% if paginator.previous_page %}
+  <a class="pagination-link" href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
+  {% else %}
+  <span class="pagination-link is-disabled">Previous</span>
+  {% endif %}
+
+  <span class="pagination-status">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page %}
+  <a class="pagination-link" href="{{ paginator.next_page_path | relative_url }}">Next</a>
+  {% else %}
+  <span class="pagination-link is-disabled">Next</span>
+  {% endif %}
+</nav>
+{% endif %}
