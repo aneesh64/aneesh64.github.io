@@ -3,8 +3,14 @@ layout: simple
 title: Home
 ---
 
+<div class="hero-banner">
+  <img src="{{ '/assets/images/hero-banner.svg' | relative_url }}"
+       alt="Heterogeneous compute pipeline diagram – FPGA fabric, DSP/BRAM blocks, DNN engine, and signal timing"
+       class="hero-img">
+</div>
+
 <div class="intro">
-  This is a personal engineering notebook focused on hardware systems, FPGA-oriented compute, compilers, and embedded vision. The design is intentionally minimal: readable text, direct navigation, and no decorative noise competing with the writing.
+  A personal engineering notebook on hardware systems, FPGA-oriented compute, compilers, and embedded vision. Minimal by design: readable text, direct navigation, no decorative noise.
 </div>
 
 {% assign home_posts = paginator.posts | default: site.posts %}
