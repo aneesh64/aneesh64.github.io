@@ -352,8 +352,6 @@ td {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 0;
-  /* override the global img border-radius */
   border-radius: inherit;
 }
 
@@ -409,7 +407,6 @@ article:hover {
 
 .site-nav a:hover::after {
   width: 100%;
-  text-decoration: none;
 }
 
 .site-nav a:hover {
