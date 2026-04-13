@@ -25,6 +25,22 @@
         <h2>{{ page.title }}</h2>
         {% if page.date %}
         <p class="page-meta">{{ page.date | date: "%B %d, %Y" }}</p>
+        {% comment %}
+          Derive GIF slug from the post filename by stripping the
+          "YYYY-MM-DD-" date prefix (always 11 characters).
+          e.g. _posts/2026-03-07-tileweave-dsl-gpt-5-4.md
+               → post_file = 2026-03-07-tileweave-dsl-gpt-5-4
+               → pixel_slug = tileweave-dsl-gpt-5-4
+        {% endcomment %}
+        {% assign _post_file = page.path | split: "/" | last | split: "." | first %}
+        {% assign _pixel_slug = _post_file | slice: 11, _post_file.size %}
+        {% assign _pixel_src = "/assets/images/pixel-art/" | append: _pixel_slug | append: ".gif" %}
+        <div class="post-pixel-art">
+          <img src="{{ _pixel_src | relative_url }}"
+               alt="Pixel art for: {{ page.title }}"
+               class="pixel-art-img"
+               width="128" height="128">
+        </div>
         {% endif %}
       </header>
       {% endif %}

@@ -319,6 +319,30 @@ td {
   opacity: 0.45;
 }
 
+/* ── Post pixel art ──────────────────────────────────────────── */
+
+.post-pixel-art {
+  display: inline-block;
+  margin-top: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow:
+    0 0 0 1px rgba(126, 231, 135, 0.07),
+    0 4px 18px rgba(0, 0, 0, 0.4);
+  line-height: 0;          /* remove gap under img */
+}
+
+.pixel-art-img {
+  display: block;
+  width: 128px;
+  height: 128px;
+  border-radius: 0;        /* let parent handle rounding */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
 /* ── Hero banner ─────────────────────────────────────────────── */
 
 .hero-banner {
