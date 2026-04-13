@@ -364,7 +364,19 @@ def slug_from_path(path: Path) -> str:
 # ── GIF writer ─────────────────────────────────────────────────────────────
 
 def save_gif(frames, out_path: Path):
-    palette_frames = [f.quantize(colors=64, method=Image.Quantize.MEDIANCUT) for f in frames]
+    # Build a shared palette from all frames combined so that colours are
+    # consistent across the animation (avoids per-frame palette flickering).
+    combined = Image.new("RGB", (SIZE, len(frames) * SIZE))
+    for i, frame in enumerate(frames):
+        combined.paste(frame, (0, i * SIZE))
+    palette_img = combined.quantize(colors=64, method=Image.Quantize.MEDIANCUT)
+
+    # Re-quantize every frame against that shared palette
+    palette_frames = [
+        frame.quantize(palette=palette_img, dither=Image.Dither.NONE)
+        for frame in frames
+    ]
+
     palette_frames[0].save(
         out_path,
         save_all=True,
